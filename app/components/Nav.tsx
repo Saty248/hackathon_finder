@@ -26,7 +26,7 @@ export default function Nav() {
       <button data-collapse-toggle="navbar-cta" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-cta" aria-expanded="false">
         <span className="sr-only">Open main menu</span>
         <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
         </svg>
     </button>
   </div>
@@ -36,13 +36,13 @@ export default function Nav() {
         <Link href="/" className={pathname=='/'? 'text-red-600 block py-2 pl-3 pr-4    md:p-0 ':'text-blue-600 block py-2 pl-3 pr-4    md:p-0 '}  aria-current="page">Home</Link>
       </li>
       <li>
-        <Link href="/about" className={pathname=='/about'?'text-red-600  block py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ':'text-blue-600  block py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 '}>About</Link>
+        <Link href="/TeamFinder" className={pathname=='/TeamFinder'?'text-red-600  block py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ':'text-blue-600  block py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 '}>TeamFinder</Link>
       </li>
       <li>
-        <Link href="#" className= {pathname=='/services'?'text-red-600 block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0':'text-blue-600 rounded hover:bg-gray-100 md:hover:bg-transparent block py-2 pl-3 pr-4 md:hover:text-blue-700 md:p-0'} >Services</Link>
+        <Link href="/YourTeam" className= {pathname=='/YourTeam'?'text-red-600 block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0':'text-blue-600 rounded hover:bg-gray-100 md:hover:bg-transparent block py-2 pl-3 pr-4 md:hover:text-blue-700 md:p-0'} >YourTeam</Link>
       </li>
       <li>
-        <Link href="#" className= {pathname=='/contact'?'text-red-600 block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0':'text-blue-600 rounded hover:bg-gray-100 md:hover:bg-transparent block py-2 pl-3 pr-4 md:hover:text-blue-700 md:p-0'}>Contact</Link>
+        <Link href="UserInfo" className= {pathname=='/UserInfo'?'text-red-600 block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0':'text-blue-600 rounded hover:bg-gray-100 md:hover:bg-transparent block py-2 pl-3 pr-4 md:hover:text-blue-700 md:p-0'}>UserInfo</Link>
       </li>
     </ul>
   </div>

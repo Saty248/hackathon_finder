@@ -13,3 +13,14 @@ type SessionProps={
     hasSigned:boolean,
     setHasSigned:(name: boolean) => void;
   }
+
+  type userdetail={
+    email:FormDataEntryValue | null,
+    address:FormDataEntryValue  | null,
+    first_name:FormDataEntryValue | null,
+    last_name:FormDataEntryValue | null,
+    phone:FormDataEntryValue | null,
+    team:FormDataEntryValue | null
+
+
+  }
