@@ -4,13 +4,16 @@ import { authOptions } from "../api/auth/[...nextauth]/route"
 import React from 'react'
 import { getToken } from "next-auth/jwt"
 import UserForm from "../components/UserForm"
+import dbConnect from "@/utils/dbconnect"
+import UserModel from "@/utils/models/User.model"
 
 
 const secret = process.env.NEXTAUTH_SECRET
-export default async function  page(req:NextRequest,res:NextResponse) {
+export default async function  page() {
 const session=await getServerSession(authOptions)
 console.log(session)
-let thisSession:Object=Object(session)
+ // @ts-ignore 
+ let address=session?.user?.address 
 if(!session){
 
     return (
@@ -19,6 +22,20 @@ if(!session){
 
     
 }
+
+
+
+  await dbConnect();
+  const users=UserModel;
+
+  const userExist=await users.findOne({address:address})
+
+  if(userExist){
+    console.log(userExist)
+
+    return(<div>user details already there {JSON.stringify(userExist)}</div>)
+  }
+
 
 
   return (

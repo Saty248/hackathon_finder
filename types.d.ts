@@ -24,3 +24,33 @@ type SessionProps={
 
 
   }
+  type team={
+    name:FormDataEntryValue | null,
+    leader:string | null,
+    description:FormDataEntryValue | null
+    name2:FormDataEntryValue | null
+}
+
+type teamProp={
+  name:string | null,
+  leader:string | null,
+  description:string | null
+  key:string
+  name2:string | null
+  teamId:string|null
+}
+
+
+
+type teamApi= {
+  _id: string,
+  name: string,
+  description:string,
+  name2: string,
+  leader: string,
+  players: [
+    string
+  ],
+  req: [ string ],
+  __v: number
+}
