@@ -39,7 +39,10 @@ type teamProp={
   name2:string | null
   teamId:string|null
 }
-
+type reqTeam={
+  reqAddress:string,
+  teamId:string
+}
 
 
 type teamApi= {

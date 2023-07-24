@@ -43,7 +43,7 @@ console.log(allusers)
     t1.req=[...t1.req,allusers]
   await  t1.save()
 
-  allusers.team=t1.name;
+  //allusers.team=t1.name;
   await allusers.save();
    console.log("t1=",t1.req.length) 
              return NextResponse.json( {status:"ok",message:"sent succ"}) 

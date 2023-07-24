@@ -5,6 +5,9 @@ import { create_team } from '../components/actions'
 import dbConnect from "../../utils/dbconnect";
 import UserModel from "../../utils/models/User.model";
 import TeamModel from '@/utils/models/Team.model';
+import TeamReq from '../components/TeamReq';
+
+
 export default async function page() {
     const session=await getServerSession(authOptions)
 console.log(session)
@@ -26,13 +29,27 @@ try {
       if(!allusers){
         return(<div>fill up the details</div>)
       }
-      const teams=TeamModel;
-      const hasTeam= await teams.findOne({leader:allusers._id})
-
-      if(hasTeam){
-        console.log(hasTeam)
-        return(<div>already a teram leader</div>)
+      let teamId=allusers.team;
+      console.log(teamId)
+      if(teamId!='null'){
+        const teams=TeamModel;
+      const hasTeam= await teams.findOne({_id:teamId})
+      console.log("hasTeam=",hasTeam)
+         if(hasTeam){
+          console.log("hasteam=",hasTeam)
+          const teamreq=hasTeam.req;
+          console.log(teamreq)
+          const map1=await teamreq.map(async(item:object)=>{
+            console.log(hasTeam._id)
+           
+        return <TeamReq reqAddress={JSON.stringify(item)} teamId={JSON.stringify(hasTeam._id)}/>
+          })
+          return(<>{map1}</>)
+        }
       }
+      
+
+     
 
 } catch (error) {
     console.log("ypurTeam",error)

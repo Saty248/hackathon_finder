@@ -29,7 +29,7 @@ export async function  PUT(
         
     let users=UserModel;
     let u1=await users.findOne({address:address})
-    console.log(u1)   
+    console.log(u1.team)   
            
     return NextResponse.json(u1._id)          
 }catch(e){

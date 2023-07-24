@@ -24,7 +24,7 @@ phone:{
 },
 team:{
     type:String,
-    required:true
+    
 }}
 );
 
