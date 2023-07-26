@@ -6,6 +6,7 @@ import { getToken } from "next-auth/jwt"
 import UserForm from "../components/UserForm"
 import dbConnect from "@/utils/dbconnect"
 import UserModel from "@/utils/models/User.model"
+import UserDetails from "../components/UserDetails"
 
 
 const secret = process.env.NEXTAUTH_SECRET
@@ -32,8 +33,12 @@ if(!session){
 
   if(userExist){
     console.log(userExist)
-
-    return(<div>user details already there {JSON.stringify(userExist)}</div>)
+    let name:string=userExist.first_name;
+    //name=JSON.stringify(name)
+    let email:string=userExist.email;
+    //email=JSON.stringify(email)
+    console.log(typeof(name))
+    return(<UserDetails name={name} email={email} />)
   }
 
 
